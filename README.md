@@ -6,7 +6,7 @@
 ## Технологический стек
 * **Java 17**
 * **Spring Boot 3** (Spring Data JPA, Web)
-* **H2 Database** (In-memory для быстрой отладки)
+* **PostgreSQL** (In-memory для быстрой отладки)
 * **Lombok**
 
 ## Что изучено и реализовано:
