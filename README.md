@@ -1,4 +1,4 @@
-# Java Task Tracker 🚀 (Stage 4: Service Layer Refactoring)
+# Java Task Tracker (Stage 4: Service Layer Refactoring)
 
 Четвертый этап разработки посвящен архитектурному совершенствованию проекта. Мы внедрили сервисный слой, 
 разделив ответственность между компонентами системы.
