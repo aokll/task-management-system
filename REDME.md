@@ -6,7 +6,7 @@
 * **Java 17**
 * **Spring Boot 3.x** (Web, Data JPA)
 * **PostgreSQL** (База данных)
-* **Lombok** (Чистый код без бойлерплейта)
+* **Lombok** 
 * **Thymeleaf** (Шаблонизатор для UI)
 * **Jakarta Validation** (Фейсконтроль входящих данных)
 
