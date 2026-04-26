@@ -1,0 +1,64 @@
+package com.example.demo.controller;
+
+import com.example.demo.Entity.Status;
+import com.example.demo.Entity.Task;
+import com.example.demo.repository.TaskRepository;
+import com.example.demo.service.TaskService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Comparator;
+import java.util.List;
+
+@Controller
+public class TaskViewController {
+    private final TaskService taskService;
+
+
+    public TaskViewController(TaskService taskService) {
+
+        this.taskService = taskService;
+    }
+
+    @GetMapping("/dashboard")
+    public String showDashboard (Model model){
+        // 1. Берем все задачи из базы
+        List<Task> allTasks = taskService.getAllSortedByLevel();
+
+        model.addAttribute("tasks", allTasks);
+        model.addAttribute("percent", taskService.calculateProgress(allTasks));
+        model.addAttribute("completedCount", allTasks.stream().filter(t -> t.getStatus() == Status.DONE).count());
+        model.addAttribute("totalCount", (long) allTasks.size());
+
+        // 3. Возвращаем имя HTML-файла (без расширения .html)
+        return "tasks";
+    }
+    @PostMapping("/dashboard/add")
+    public String addTaskFromForm(
+            @RequestParam String title,
+            @RequestParam Integer level,
+            @RequestParam String topic
+    ) {
+        taskService.addTask(title, level, topic);
+
+        // МАГИЯ: Перенаправляем пользователя обратно на главную страницу, чтобы он увидел обновленный список
+        return "redirect:/dashboard";
+    }
+    // 1. Метод для смены статуса на DONE
+    @PostMapping("/dashboard/done/{id}")
+    public String markAsDone(@PathVariable Long id){
+        // Находим задачу по ID (используем Optional, чтобы не упасть)
+        taskService.markAsDone(id);
+        return "redirect:/dashboard";// Возвращаемся на страницу
+    }
+    // 2. Метод для удаления задачи
+    @PostMapping("/dashboard/delete/{id}")
+    public String deleteTask(@PathVariable Long id){
+        taskService.deleteTask(id);
+        return "redirect:/dashboard";
+    }
+}
