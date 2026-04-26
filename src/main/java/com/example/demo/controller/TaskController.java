@@ -4,6 +4,7 @@ import com.example.demo.Entity.Difficulty;
 import com.example.demo.Entity.Status;
 import com.example.demo.Entity.Task;
 import com.example.demo.repository.TaskRepository;
+import com.example.demo.service.TaskService;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -21,110 +22,72 @@ import java.util.List;
 @RequestMapping("/api/tasks")
 @Validated // ЭТА СТРОЧКА ВКЛЮЧАЕТ ПРОВЕРКУ @RequestParam
 public class TaskController {
-    @Autowired
-    private TaskRepository taskRepository;
+    private final TaskService taskService;
 
-    // Сюда мы скоро добавим методы для создания и просмотра твоих задач
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     @GetMapping("/hello")
     public String sayHello() {
-        return "Привет! Наш трекер JavaRush скоро оживет!";
+        return "Привет! Наш трекер Java скоро оживет!";
     }
 
     @GetMapping("/add")
-    public String addTask(
-            @RequestParam @NotBlank @Size(min = 3) String title,
-            @RequestParam @Min(0) @Max(40) Integer level,
-
-            // Делаем эти параметры необязательными
-            @RequestParam(required = false) String topic,
-            @RequestParam(required = false) Status status,
-            @RequestParam(required = false) Difficulty difficulty
-    ){
-        Task task = new Task();
-        task.setTitle(title);
-        task.setTopic(topic);
-        task.setLevel(level);
-            // Умная проверка: если пользователь передал статус/сложность — ставим их.
-            // Если НЕ передал — сработают дефолтные значения из класса Task.
-        if (status != null) task.setStatus(status);
-        if (difficulty != null)task.setDifficulty(difficulty);
-
-        taskRepository.save(task);
-
-        return "Задача" + title + " для" + level + " уровня сохранена";
+    public String addTask(@RequestParam String title, @RequestParam Integer level, @RequestParam String topic) {
+        // 3. Делегируем задачу сервису
+        taskService.addTask(title, level, topic);
+        return "Задача сохранена через Service Layer!";
     }
 
     @GetMapping("/all")
     public List<Task> getAllTask(){
-        // Используем встроенную сортировку Spring Data JPA
-        return taskRepository.findAll();
+        return taskService.allTask();
     }
 
     @GetMapping("/delete")
     public String deleteTask (@RequestParam Long id){
-        try {
-            if (taskRepository.existsById(id)){
-                taskRepository.deleteById(id);
-                return "успех! задача #" + id + "удалена.";
-            }else {
-                return "задача с таким ID не найдена в базе";
-            }
-        }catch (Exception e){
-            return "ошибка при удалении: " + e.getMessage();
-        }
+        return taskService.deleteTask(id);
     }
-@GetMapping("/update-status")
-public String updateStatus(@RequestParam Long id, @RequestParam Status newStatus) {
-    // 1. Пытаемся найти задачу в базе по ID
-    return taskRepository.findById(id).map(task -> {
-        // 2. Если нашли — меняем статус
-        task.setStatus(newStatus);
-        // 3. Сохраняем обновленный объект
-        taskRepository.save(task);
-        return "Статус задачи #" + id + " успешно изменен на " + newStatus;
-    }).orElse("Ошибка: Задача с таким ID не найдена.");
-}
-@GetMapping("/update-difficulty")
+
+    @GetMapping("/update-status")
+    public String updateStatus(@RequestParam Long id, @RequestParam Status newStatus) {
+        return taskService.UpdateStatus(id, newStatus);
+    }
+    @GetMapping("/update-difficulty")
     public String updateDifficulty(@RequestParam Long id, @RequestParam Difficulty newDifficulty){
-    // 1. Пытаемся найти задачу в базе по ID
-    return taskRepository.findById(id).map(task -> {
-        // 2. Если нашли — меняем сложность
-        task.setDifficulty(newDifficulty);
-        // 3. Сохраняем обновленный объект
-        taskRepository.save(task);
-        return "Сложность задачи #" + id + " успешно изменен на " + newDifficulty;
-    }).orElse("Ошибка: Задача с таким ID не найдена.");
-}
+        return taskService.UpdateDifficulty(id, newDifficulty);
+    }
+
     //поиск задачи по введенной title
     //1) добавили в TaskRepository - List<Task> findByTitleContainingIgnoreCase(String title);
     //2) ...
-@GetMapping("/search")
-    public List<Task> searchTasks (@RequestParam String title){
-        //Просто вызываем наш новый метод из репозитория
-    return taskRepository.findByTitleContainingIgnoreCase(title);
-}
+    @GetMapping("/search-by-title")
+    public List<Task> getTasksByTitle (@RequestParam String title){
+        return taskService.searchTasksByTitle(title);
+    }
     //поиск задачи по введенной topic
     //1) добавили в TaskRepository - List<Task> findByTopicIgnoreCase (String topic);
     //2) ...
-@GetMapping("/by-topic")
-public List<Task> getTasksByTopic (@RequestParam String topic){
-        return taskRepository.findByTopicIgnoreCase(topic);
-}
+    @GetMapping("/search-by-topic")
+    public List<Task> getTasksByTopic (@RequestParam String topic){
+        return taskService.searchTasksByTopic(topic);
+    }
 
-@GetMapping("/filter")
-public List<Task> filterTasks (@RequestParam String topic, @RequestParam Status status){
-     return taskRepository.findByTopicIgnoreCaseAndStatus(topic, status);
-}
-@GetMapping("by-status-sorted")
-public List<Task> getByStatusSorted (@RequestParam Status status){
-        return taskRepository.findByStatusOrderByLevelDesc(status);
-}
+    //Найти по теме (игнорируя регистр) и по конкретному статусу
+    @GetMapping("/sort-by-topic-and-status")
+    public List<Task> filterTasks (@RequestParam String topic, @RequestParam Status status){
+        return taskService.sortByTopicAndStatus(topic, status);
+    }
+    @GetMapping("by-status-sorted")
+    public List<Task> getByStatusSorted (@RequestParam Status status){
+        return taskService.byStatusSorted(status);
+    }
 
 
-@ExceptionHandler(ConstraintViolationException.class)
+    @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<String> handlerValidationException(ConstraintViolationException e){
         // Джарвис вежливо сообщает об ошибке вместо того, чтобы падать
-    return ResponseEntity.badRequest().body("Сэр, данные некоректны: " + e.getMessage());
-}
+        return ResponseEntity.badRequest().body("Сэр, данные некоректны: " + e.getMessage());
+    }
 }
