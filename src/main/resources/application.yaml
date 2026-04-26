@@ -1,6 +1,6 @@
 spring:
  datasource:
-   url: jdbc:postgresql://localhost:5433/javarush_tracker
+   url: jdbc:postgresql://localhost:5432/javarush_tracker
    username: postgres
    password: 1111
    driver-class-name: org.postgresql.Driver
