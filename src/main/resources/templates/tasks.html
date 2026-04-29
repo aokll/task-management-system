@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой Путь Разработчика</title>
+    <link href="https://cdn.jsdelivr.net rel=stylesheet">
+    <style>
+        body { font-family: sans-serif; backgroun: #f4f4f4; padding: 20px; }
+        .task-card { background: while; padding; 15px; margin-bottom: 10px; border-radius: 8px; border-left: 5px solid #2ecc71; }
+        .level { color: #7f8c8d; font-wight: bold; }
+    </style>
+</head>
+<body>
+    <div class="mb-4">
+        <div class="d-flex justify-content-between mb-1">
+            <span>Прогресс обучения: <b th:text="${percent} + '%'"></b></span>
+            <span class="text-muted" th:text="${completedCount} + ' из ' + ${totalCount} + ' задач выполнено'"></span>
+        </div>
+        <div class="progress" style="height: 25px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                 role="progressbar"
+                 th:style="'width: ' + ${percent} + '%'"
+                 th:aria-valuenow="${percent}" aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+    </div>
+    <div class="card p-4 mb-5 shadow-sm">
+        <h4>➕ Добавить новую цель</h4>
+        <form action="/dashboard/add" method="post" class="row g-3">
+            <div class="col-md-4">
+                <input type="text" name="title" class="form-control" placeholder="Название (например, Generics)" required>
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="level" class="form-control" placeholder="Уровень (0-40)" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="topic" class="form-control" placeholder="Тема (Collections...)">
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-success w-100">Добавить в план</button>
+            </div>
+        </form>
+    </div>
+    <h1>Мои задачи (JavaRush Level 34)</h1>
+        <!-- Это цикл: для каждой задачи 't' из списка 'tasks' создаем блок -->
+    <div th:each="t : ${tasks}" class="card h-100 p-3 shadow-sm"
+         th:style="${t.status == t.status.DONE} ? 'opacity: 0.6; border-left: 5px solid #6c757d;' : 'border-left: 5px solid #28a745;'">
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="badge bg-secondary" th:text="'Level ' + ${t.level}"></span>
+
+            <!-- цветные бейджи сложности -->
+            <div>
+                <span th:if="${#strings.toString(t.difficulty) == 'HARD'}" class="badge bg-danger">HARD</span>
+                <span th:if="${#strings.toString(t.difficulty) == 'MEDIUM'}" class="badge bg-warning text-dark">MEDIUM</span>
+                <span th:if="${#strings.toString(t.difficulty) == 'EASY'}" class="badge bg-success">EASY</span>
+            </div>
+        </div>
+        <h3 th:text="${t.title}">Название задачи</h3>
+        <p>Тема: <span th:text="${t.topic}">Тема</span> | Статус: <b th:text="${t.status}">Статус</b>
+        <div class="mt-3 d-flex gap-2">
+            <!-- Кнопка ВЫПОЛНЕНО -->
+            <form th:action="@{/dashboard/done/{id}(id=${t.id})}" method="post">
+                <button type="submit" class="btn btn-sm btn-outline-success">✅ Готово</button>
+            </form>
+
+            <!-- Кнопка УДАЛИТЬ -->
+            <form th:action="@{/dashboard/delete/{id}(id=${t.id})}" method="post">
+                <button type="submit" class="btn btn-sm btn-outline-danger">🗑️ Удалить</button>
+            </form>
+        </div>
+        </p>
+    </div>
+</body>
+</html>
