@@ -1,4 +1,4 @@
-# 📑 Java Tracker — Ver 6.0: Multi-user Logic
+# Java Tracker — Ver 6.0: Multi-user Logic
 
 ## Что нового в этой версии? (Diff: 5.0 -> 6.0)
 
@@ -19,7 +19,7 @@
 *   **Derived Queries:** В `TaskRepository` внедрены сложные методы поиска, учитывающие владельца:
     *   `findByOwnerUsernameAndTitleContainingIgnoreCase`
     *   `findByOwnerUsernameAndStatusOrderByLevelDesc`
-*   **Оптимизация:** Сортировка по уровню JavaRush теперь происходит на стороне базы данных (SQL `ORDER BY`), а не в оперативной памяти Java.
+*   **Оптимизация:** Сортировка по уровню теперь происходит на стороне базы данных (SQL `ORDER BY`), а не в оперативной памяти Java.
 
 ---
 
