@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Панель администратора</title>
+</head>
+<body>
+<h1>Управление пользователями</h1>
+<a href="/dashboard">← Вернуться к задачам</a>
+<hr>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Логин</th>
+        <th>Роли</th>
+        <th>Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.roles}"></td>
+        <td>
+            <!-- Кнопка удаления (нельзя удалить самого себя для безопасности) -->
+            <form th:if="${user.username != currentAdminName}"
+                  th:action="@{/admin/users/delete/{id}(id=${user.id})}" method="post">
+                <button type="submit" style="color: red; cursor: pointer;">Удалить</button>
+            </form>
+            <span th:if="${user.username == currentAdminName}" style="color: blue; font-weight: bold;">
+            (Это вы)
+            </span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
