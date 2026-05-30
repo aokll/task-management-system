@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaTracker | Dashboard</title>
+
+    <!-- Локальный Bootstrap из WebJars -->
+    <link th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+
+    <!-- Временный стиль, чтобы точно проверить, работают ли наши стили -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Приятный светло-серый фон */
+        }
+        /* Убираем синие рамки и делаем карточки "мягкими" */
+        .card {
+            border: none !important;
+            border-radius: 12px;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+
+        .navbar-brand { font-weight: 700; letter-spacing: -1px; }
+
+        /* Делаем полоску слева для карточек задач */
+        .task-card-done { border-left: 5px solid #6c757d !important; opacity: 0.8; }
+        .task-card-new { border-left: 5px solid #198754 !important; }
+    </style>
+</head>
+<body>
+
+<!-- Навигация -->
+<nav class="navbar navbar-dark bg-dark mb-4 px-3 shadow-sm text-white">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#">JAVATRACKER</a>
+        <div class="d-flex align-items-center">
+            <span class="me-3 small">Вы вошли как: <strong th:text="${username}">User</strong></span>
+            <form th:action="@{/logout}" method="post" class="m-0">
+                <button type="submit" class="btn btn-sm btn-outline-danger">Выйти</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- Кнопка Админа -->
+    <div th:if="${isAdmin}" class="mb-4">
+        <a href="/admin/users" class="btn btn-warning w-100 fw-bold shadow-sm">⚙️ УПРАВЛЕНИЕ ПОЛЬЗОВАТЕЛЯМИ</a>
+    </div>
+
+    <!-- Прогресс -->
+    <div class="card p-4 mb-4 shadow-sm text-center">
+        <div class="d-flex justify-content-between mb-2">
+            <span class="fw-bold">Прогресс обучения</span>
+            <span class="badge bg-success" th:text="${percent} + '%'">0%</span>
+        </div>
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                 role="progressbar" th:style="'width: ' + ${percent} + '%'"></div>
+        </div>
+        <p class="text-muted small mt-2 mb-0" th:text="${completedCount} + ' из ' + ${totalCount} + ' задач выполнено'"></p>
+    </div>
+
+    <!-- Форма добавления -->
+    <div class="card p-4 mb-5 shadow-sm border-top border-primary border-4">
+        <h5 class="mb-3 fw-bold">➕ Добавить новую цель</h5>
+        <form action="/dashboard/add" method="post" class="row g-3">
+            <div class="col-md-4">
+                <input type="text" name="title" class="form-control" placeholder="Название задачи" required>
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="level" class="form-control" placeholder="Уровень" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="topic" class="form-control" placeholder="Тема">
+            </div>
+            <div class="col-md-3 text-end">
+                <button type="submit" class="btn btn-success w-100 fw-bold">Добавить в план</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Сетка задач -->
+    <h2 class="mb-4 fw-bold text-secondary">Мои задачи (JavaRush Level 34)</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <div class="col" th:each="t : ${tasks}">
+            <div class="card h-100 shadow-sm"
+                 th:classappend="${t.status.toString() == 'DONE'} ? 'task-card-done' : 'task-card-new'">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-secondary" th:text="'Level ' + ${t.level}"></span>
+                        <div>
+                            <span th:if="${#strings.toString(t.difficulty) == 'HARD'}" class="badge bg-danger">HARD</span>
+                            <span th:if="${#strings.toString(t.difficulty) == 'MEDIUM'}" class="badge bg-warning text-dark">MEDIUM</span>
+                            <span th:if="${#strings.toString(t.difficulty) == 'EASY'}" class="badge bg-success">EASY</span>
+                        </div>
+                    </div>
+                    <h5 class="card-title fw-bold" th:text="${t.title}">Название</h5>
+                    <p class="card-text text-muted small mb-0">Тема: <span th:text="${t.topic}">Тема</span></p>
+                    <p class="card-text small fw-bold">Статус: <span th:text="${t.status}">Статус</span></p>
+                </div>
+                <div class="card-footer bg-transparent border-0 d-flex gap-2 pb-3 mt-auto">
+                    <a th:href="@{/dashboard/edit/{id} (id=${t.id})}" class="btn btn-sm btn-outline-primary">Изменить</a>
+                    <form th:action="@{/dashboard/done/{id}(id=${t.id})}" method="post">
+                        <button type="submit" class="btn btn-sm btn-outline-success">Готово</button>
+                    </form>
+                    <form th:action="@{/dashboard/delete/{id}(id=${t.id})}" method="post">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Удалить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ПОЛНАЯ ССЫЛКА НА JS -->
+<script src="https://cdn.jsdelivr.net"></script>
+</body>
+</html>
