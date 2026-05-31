@@ -26,7 +26,7 @@ public class DatabaseMigrator {
     @PostConstruct
     public void runMigration() {
         System.out.println("==============================================");
-        System.out.println(">>> СИЛОВОЙ АВТОНОМНЫЙ СТАРТ МИГРАЦИИ FLYWAY <<<");
+        System.out.println(">>> СТАРТ МИГРАЦИИ FLYWAY <<<");
         System.out.println("==============================================");
 
         try {
@@ -38,10 +38,14 @@ public class DatabaseMigrator {
                     .load();
 
             flyway.migrate();
+            System.out.println("===========================================================");
             System.out.println(">>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<");
+            System.out.println("===========================================================");
 
         } catch (Exception e) {
+            System.out.println("===========================================================");
             System.err.println(">>> КРИТИЧЕСКАЯ ОШИБКА ЗАПУСКА FLYWAY: " + e.getMessage());
+            System.out.println("===========================================================");
             e.printStackTrace();
             System.exit(1);
         }
