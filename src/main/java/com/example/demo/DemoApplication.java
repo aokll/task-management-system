@@ -9,14 +9,5 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class DemoApplication {
 
-	public static void main(String[] args) {
-
-		SpringApplication.run(DemoApplication.class, args);
-
-//		ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
-//
-// Закомментировано для перехода на стандартный автозапуск Spring Boot
-//		DatabaseMigrator migrator = context.getBean(DatabaseMigrator.class);
-//		migrator.runMigration();
-	}
+	public static void main(String[] args) {SpringApplication.run(DemoApplication.class, args);}
 }
