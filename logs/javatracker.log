@@ -1,0 +1,465 @@
+2026-06-13 15:29:17.358 [main] INFO  [] com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.10 with PID 2172 (E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture\target\classes started by User in E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture)
+2026-06-13 15:29:17.368 [main] DEBUG [] com.example.demo.DemoApplication - Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-06-13 15:29:17.369 [main] INFO  [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-13 15:29:17.784 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-13 15:29:18.408 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-13 15:29:18.470 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2026-06-13 15:29:19.085 [main] INFO  [] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-13 15:29:19.100 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:29:19.103 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-13 15:29:19.103 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-13 15:29:19.166 [main] INFO  [] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1701 ms
+2026-06-13 15:29:19.327 [main] INFO  [] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-13 15:29:19.403 [main] INFO  [] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-06-13 15:29:19.778 [main] INFO  [] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-13 15:29:19.804 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-13 15:29:20.048 [main] INFO  [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@19d76106
+2026-06-13 15:29:20.049 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-13 15:29:20.101 [main] WARN  [] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-13 15:29:20.128 [main] INFO  [] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/javarush_tracker]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 15.3
+	Default catalog/schema: javarush_tracker/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-13 15:29:21.031 [main] INFO  [] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-13 15:29:21.108 [main] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:29:21.186 [main] INFO  [] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-13 15:29:21.417 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:29:21.418 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> СТАРТ МИГРАЦИИ FLYWAY <<<
+2026-06-13 15:29:21.418 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:29:21.589 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:29:21.662 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.051s)
+2026-06-13 15:29:21.705 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:29:21.709 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:29:21.713 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:29:21.713 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<
+2026-06-13 15:29:21.713 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:29:21.803 [main] WARN  [] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-13 15:29:21.897 [main] INFO  [] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-13 15:29:22.470 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:29:22.484 [main] INFO  [] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-13 15:29:22.490 [main] INFO  [] com.example.demo.DemoApplication - Started DemoApplication in 5.696 seconds (process running for 6.04)
+2026-06-13 15:29:22.495 [main] INFO  [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:29:22.495 [main] INFO  [] com.example.demo.config.LineRunner - Запуск ручной проверки логики...
+2026-06-13 15:29:22.886 [main] DEBUG [] com.example.demo.config.LineRunner - Проверка логики: УСПЕШНО!
+2026-06-13 15:29:22.887 [main] DEBUG [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:29:22.889 [main] DEBUG [] c.e.demo.config.DataInitializer - --- СУПЕР-АДМИН УЖЕ ЕСТЬ В БАЗЕ, ПРОПУСКАЕМ ---
+2026-06-13 15:30:34.008 [SpringApplicationShutdownHook] INFO  [] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-13 15:30:34.020 [tomcat-shutdown] INFO  [] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-06-13 15:30:34.023 [SpringApplicationShutdownHook] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:30:34.024 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-13 15:30:34.030 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-13 15:33:14.959 [main] INFO  [] com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.10 with PID 7728 (E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture\target\classes started by User in E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture)
+2026-06-13 15:33:14.961 [main] DEBUG [] com.example.demo.DemoApplication - Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-06-13 15:33:14.961 [main] INFO  [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-13 15:33:15.310 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-13 15:33:15.735 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-13 15:33:15.781 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2026-06-13 15:33:16.322 [main] INFO  [] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-13 15:33:16.334 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:33:16.336 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-13 15:33:16.336 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-13 15:33:16.389 [main] INFO  [] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1387 ms
+2026-06-13 15:33:16.532 [main] INFO  [] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-13 15:33:16.583 [main] INFO  [] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-06-13 15:33:16.898 [main] INFO  [] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-13 15:33:16.922 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-13 15:33:17.065 [main] INFO  [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@665ed71a
+2026-06-13 15:33:17.066 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-13 15:33:17.087 [main] WARN  [] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-13 15:33:17.105 [main] INFO  [] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/javarush_tracker]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 15.3
+	Default catalog/schema: javarush_tracker/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-13 15:33:17.840 [main] INFO  [] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-13 15:33:19.036 [main] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:33:19.109 [main] INFO  [] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-13 15:33:19.310 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:33:19.310 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> СТАРТ МИГРАЦИИ FLYWAY <<<
+2026-06-13 15:33:19.311 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:33:19.502 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:33:19.548 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.028s)
+2026-06-13 15:33:19.705 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:33:19.708 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:33:19.712 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:33:19.712 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<
+2026-06-13 15:33:19.712 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:33:19.818 [main] WARN  [] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-13 15:33:19.896 [main] INFO  [] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-13 15:33:20.412 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:33:20.435 [main] INFO  [] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-13 15:33:20.441 [main] INFO  [] com.example.demo.DemoApplication - Started DemoApplication in 5.982 seconds (process running for 6.322)
+2026-06-13 15:33:20.795 [main] DEBUG [] c.e.demo.config.DataInitializer - --- СУПЕР-АДМИН УЖЕ ЕСТЬ В БАЗЕ, ПРОПУСКАЕМ ---
+2026-06-13 15:33:20.796 [main] INFO  [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:33:20.796 [main] INFO  [] com.example.demo.config.LineRunner - Запуск ручной проверки логики...
+2026-06-13 15:33:20.814 [main] DEBUG [] com.example.demo.config.LineRunner - Проверка логики: УСПЕШНО!
+2026-06-13 15:33:20.815 [main] DEBUG [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:33:54.972 [http-nio-8080-exec-2] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-13 15:33:54.972 [http-nio-8080-exec-2] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-13 15:33:54.974 [http-nio-8080-exec-2] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-13 15:36:03.689 [SpringApplicationShutdownHook] INFO  [] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-13 15:36:03.703 [tomcat-shutdown] INFO  [] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-06-13 15:36:03.707 [SpringApplicationShutdownHook] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:36:03.711 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-13 15:36:03.728 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-13 15:39:24.972 [main] INFO  [] com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.10 with PID 16304 (E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture\target\classes started by User in E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture)
+2026-06-13 15:39:24.976 [main] DEBUG [] com.example.demo.DemoApplication - Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-06-13 15:39:24.976 [main] INFO  [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-13 15:39:25.342 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-13 15:39:25.740 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-13 15:39:25.783 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2026-06-13 15:39:26.304 [main] INFO  [] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-13 15:39:26.316 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:39:26.319 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-13 15:39:26.319 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-13 15:39:26.374 [main] INFO  [] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1359 ms
+2026-06-13 15:39:26.516 [main] INFO  [] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-13 15:39:26.572 [main] INFO  [] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-06-13 15:39:26.891 [main] INFO  [] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-13 15:39:26.913 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-13 15:39:27.044 [main] INFO  [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1be52113
+2026-06-13 15:39:27.045 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-13 15:39:27.067 [main] WARN  [] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-13 15:39:27.086 [main] INFO  [] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/javarush_tracker]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 15.3
+	Default catalog/schema: javarush_tracker/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-13 15:39:27.783 [main] INFO  [] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-13 15:39:27.830 [main] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:39:27.910 [main] INFO  [] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-13 15:39:28.113 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:39:28.113 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> СТАРТ МИГРАЦИИ FLYWAY <<<
+2026-06-13 15:39:28.113 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:39:28.283 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:39:28.319 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.019s)
+2026-06-13 15:39:28.361 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:39:28.363 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:39:28.367 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:39:28.367 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<
+2026-06-13 15:39:28.368 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:39:28.448 [main] WARN  [] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-13 15:39:28.521 [main] INFO  [] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-13 15:39:29.049 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:39:29.065 [main] INFO  [] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-13 15:39:29.071 [main] INFO  [] com.example.demo.DemoApplication - Started DemoApplication in 4.618 seconds (process running for 4.973)
+2026-06-13 15:39:29.075 [main] INFO  [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:39:29.076 [main] INFO  [] com.example.demo.config.LineRunner - Запуск ручной проверки логики...
+2026-06-13 15:39:29.440 [main] DEBUG [] com.example.demo.config.LineRunner - Проверка логики: УСПЕШНО!
+2026-06-13 15:39:29.440 [main] DEBUG [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:39:29.443 [main] DEBUG [] c.e.demo.config.DataInitializer - --- СУПЕР-АДМИН УЖЕ ЕСТЬ В БАЗЕ, ПРОПУСКАЕМ ---
+2026-06-13 15:39:39.417 [http-nio-8080-exec-1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-13 15:39:39.418 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-13 15:39:39.432 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2026-06-13 15:41:35.329 [SpringApplicationShutdownHook] INFO  [] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-13 15:41:35.342 [tomcat-shutdown] INFO  [] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-06-13 15:41:35.346 [SpringApplicationShutdownHook] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:41:35.348 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-13 15:41:35.357 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-13 15:49:49.122 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-13 15:49:49.157 [main] INFO  [] com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.10 with PID 4080 (E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture\target\classes started by User in E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture)
+2026-06-13 15:49:49.158 [main] DEBUG [] com.example.demo.DemoApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2026-06-13 15:49:49.158 [main] INFO  [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-13 15:49:49.937 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-13 15:49:49.976 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2026-06-13 15:49:50.518 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-13 15:49:50.527 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:49:50.531 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-13 15:49:50.532 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2026-06-13 15:49:50.605 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-13 15:49:50.605 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1409 ms
+2026-06-13 15:49:50.829 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-13 15:49:50.993 [main] INFO  [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7606bd03
+2026-06-13 15:49:50.995 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-13 15:49:51.022 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:49:51.070 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.028s)
+2026-06-13 15:49:51.126 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:49:51.128 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:49:51.203 [main] INFO  [] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-13 15:49:51.256 [main] INFO  [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-06-13 15:49:51.291 [main] INFO  [] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-13 15:49:51.561 [main] INFO  [] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-13 15:49:51.597 [main] WARN  [] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-13 15:49:52.242 [main] INFO  [] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-13 15:49:52.267 [main] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:49:52.597 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:49:52.597 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> СТАРТ МИГРАЦИИ FLYWAY <<<
+2026-06-13 15:49:52.598 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:49:52.637 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:49:52.647 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.005s)
+2026-06-13 15:49:52.681 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:49:52.681 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:49:52.683 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:49:52.683 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<
+2026-06-13 15:49:52.683 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:49:52.760 [main] WARN  [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-13 15:49:52.787 [main] INFO  [] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-13 15:49:53.309 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:49:53.328 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-13 15:49:53.336 [main] INFO  [] com.example.demo.DemoApplication - Started DemoApplication in 4.626 seconds (process running for 4.925)
+2026-06-13 15:49:53.439 [main] DEBUG [] c.e.demo.config.DataInitializer - --- СУПЕР-АДМИН УЖЕ ЕСТЬ В БАЗЕ, ПРОПУСКАЕМ ---
+2026-06-13 15:49:53.440 [main] INFO  [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:49:53.440 [main] INFO  [] com.example.demo.config.LineRunner - Запуск ручной проверки логики...
+2026-06-13 15:49:53.455 [main] DEBUG [] com.example.demo.config.LineRunner - Проверка логики: УСПЕШНО!
+2026-06-13 15:49:53.455 [main] DEBUG [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:49:57.169 [http-nio-8080-exec-1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-13 15:49:57.170 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-13 15:49:57.170 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-06-13 15:50:54.446 [SpringApplicationShutdownHook] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:50:54.448 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-13 15:50:54.453 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-13 15:51:01.469 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-13 15:51:01.504 [main] INFO  [] com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.10 with PID 22356 (E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture\target\classes started by User in E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture)
+2026-06-13 15:51:01.504 [main] DEBUG [] com.example.demo.DemoApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2026-06-13 15:51:01.505 [main] INFO  [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-13 15:51:02.274 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-13 15:51:02.314 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2026-06-13 15:51:02.857 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-13 15:51:02.866 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:51:02.868 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-13 15:51:02.868 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2026-06-13 15:51:02.932 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-13 15:51:02.932 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1388 ms
+2026-06-13 15:51:03.159 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-13 15:51:03.316 [main] INFO  [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61808ecd
+2026-06-13 15:51:03.318 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-13 15:51:03.344 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:51:03.391 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.029s)
+2026-06-13 15:51:03.563 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:51:03.565 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:51:03.638 [main] INFO  [] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-13 15:51:03.684 [main] INFO  [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-06-13 15:51:03.717 [main] INFO  [] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-13 15:51:03.978 [main] INFO  [] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-13 15:51:04.024 [main] WARN  [] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-13 15:51:04.668 [main] INFO  [] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-13 15:51:04.694 [main] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:51:05.017 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:51:05.017 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> СТАРТ МИГРАЦИИ FLYWAY <<<
+2026-06-13 15:51:05.018 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:51:05.059 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:51:05.069 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.005s)
+2026-06-13 15:51:05.105 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:51:05.106 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:51:05.108 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:51:05.108 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<
+2026-06-13 15:51:05.108 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:51:05.188 [main] WARN  [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-13 15:51:05.219 [main] INFO  [] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-13 15:51:05.697 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:51:05.708 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-13 15:51:05.715 [main] INFO  [] com.example.demo.DemoApplication - Started DemoApplication in 4.666 seconds (process running for 4.971)
+2026-06-13 15:51:05.718 [main] INFO  [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:51:05.718 [main] INFO  [] com.example.demo.config.LineRunner - Запуск ручной проверки логики...
+2026-06-13 15:51:05.835 [main] DEBUG [] com.example.demo.config.LineRunner - Проверка логики: УСПЕШНО!
+2026-06-13 15:51:05.835 [main] DEBUG [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:51:05.838 [main] DEBUG [] c.e.demo.config.DataInitializer - --- СУПЕР-АДМИН УЖЕ ЕСТЬ В БАЗЕ, ПРОПУСКАЕМ ---
+2026-06-13 15:51:11.386 [http-nio-8080-exec-1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-13 15:51:11.386 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-13 15:51:11.387 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-13 15:54:48.581 [SpringApplicationShutdownHook] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:54:48.583 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-13 15:54:48.586 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-13 15:57:20.842 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-13 15:57:20.879 [main] INFO  [] com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.10 with PID 18660 (E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture\target\classes started by User in E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture)
+2026-06-13 15:57:20.880 [main] DEBUG [] com.example.demo.DemoApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2026-06-13 15:57:20.880 [main] INFO  [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-13 15:57:21.626 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-13 15:57:21.666 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2026-06-13 15:57:22.215 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-13 15:57:22.227 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:57:22.229 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-13 15:57:22.229 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2026-06-13 15:57:22.300 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-13 15:57:22.301 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1383 ms
+2026-06-13 15:57:22.526 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-13 15:57:22.677 [main] INFO  [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b3f4bd8
+2026-06-13 15:57:22.679 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-13 15:57:22.701 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:57:22.753 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.034s)
+2026-06-13 15:57:22.804 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:57:22.806 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:57:22.880 [main] INFO  [] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-13 15:57:22.927 [main] INFO  [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-06-13 15:57:22.963 [main] INFO  [] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-13 15:57:23.230 [main] INFO  [] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-13 15:57:23.274 [main] WARN  [] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-13 15:57:23.891 [main] INFO  [] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-13 15:57:23.916 [main] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 15:57:24.225 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:57:24.225 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> СТАРТ МИГРАЦИИ FLYWAY <<<
+2026-06-13 15:57:24.225 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 15:57:24.265 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 15:57:24.275 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.005s)
+2026-06-13 15:57:24.311 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 15:57:24.312 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 15:57:24.314 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:57:24.315 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<
+2026-06-13 15:57:24.315 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 15:57:24.399 [main] WARN  [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-13 15:57:24.430 [main] INFO  [] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-13 15:57:24.943 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-13 15:57:24.956 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-13 15:57:24.963 [main] INFO  [] com.example.demo.DemoApplication - Started DemoApplication in 4.516 seconds (process running for 4.801)
+2026-06-13 15:57:25.085 [main] DEBUG [] c.e.demo.config.DataInitializer - --- СУПЕР-АДМИН УЖЕ ЕСТЬ В БАЗЕ, ПРОПУСКАЕМ ---
+2026-06-13 15:57:25.085 [main] INFO  [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:57:25.085 [main] INFO  [] com.example.demo.config.LineRunner - Запуск ручной проверки логики...
+2026-06-13 15:57:25.099 [main] DEBUG [] com.example.demo.config.LineRunner - Проверка логики: УСПЕШНО!
+2026-06-13 15:57:25.099 [main] DEBUG [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 15:57:38.124 [http-nio-8080-exec-1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-13 15:57:38.126 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-13 15:57:38.132 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-06-13 16:00:54.354 [http-nio-8080-exec-1] INFO  [] c.e.d.service.UserDetailsServiceImpl - Зарегистрирован новый пользователь с логином [joy]
+2026-06-13 16:01:05.751 [http-nio-8080-exec-8] DEBUG [] c.e.d.service.UserDetailsServiceImpl - Процесс аутентификации: попытка загрузки пользователя [joy]
+2026-06-13 16:01:05.760 [http-nio-8080-exec-8] INFO  [] c.e.d.service.UserDetailsServiceImpl - Пользователь [joy] успешно найден. Роли: [USER]
+2026-06-13 16:01:05.871 [http-nio-8080-exec-6] DEBUG [joy] c.e.demo.service.TaskServiceImpl - Загрузка главного экрана (Dashboard). Сортировка всех задач для [joy]
+2026-06-13 16:02:06.701 [http-nio-8080-exec-1] DEBUG [joy] c.e.demo.service.TaskServiceImpl -  addTask -> Пользователь: [joy], Данные: title='dddd', level=2, topic='API'
+2026-06-13 16:02:06.737 [http-nio-8080-exec-1] INFO  [joy] c.e.demo.service.TaskServiceImpl - Пользователь [joy] успешно создал задачу: 'dddd'
+2026-06-13 16:02:06.759 [http-nio-8080-exec-2] DEBUG [joy] c.e.demo.service.TaskServiceImpl - Загрузка главного экрана (Dashboard). Сортировка всех задач для [joy]
+2026-06-13 16:02:47.412 [http-nio-8080-exec-8] DEBUG [] c.e.d.service.UserDetailsServiceImpl - Процесс аутентификации: попытка загрузки пользователя [superadmin]
+2026-06-13 16:02:47.418 [http-nio-8080-exec-8] INFO  [] c.e.d.service.UserDetailsServiceImpl - Пользователь [superadmin] успешно найден. Роли: [ADMIN, USER]
+2026-06-13 16:02:47.677 [http-nio-8080-exec-6] DEBUG [superadmin] c.e.demo.service.TaskServiceImpl - Загрузка главного экрана (Dashboard). Сортировка всех задач для [superadmin]
+2026-06-13 16:08:12.903 [SpringApplicationShutdownHook] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 16:08:12.906 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-13 16:08:12.911 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-13 17:08:25.026 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-13 17:08:25.075 [main] INFO  [] com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.10 with PID 22780 (E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture\target\classes started by User in E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture)
+2026-06-13 17:08:25.075 [main] DEBUG [] com.example.demo.DemoApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2026-06-13 17:08:25.076 [main] INFO  [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-13 17:08:26.145 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-13 17:08:26.198 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2026-06-13 17:08:26.905 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-13 17:08:26.917 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-13 17:08:26.920 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-13 17:08:26.920 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2026-06-13 17:08:26.992 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-13 17:08:26.993 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1870 ms
+2026-06-13 17:08:27.259 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-13 17:08:27.471 [main] INFO  [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@26ca12a2
+2026-06-13 17:08:27.472 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-13 17:08:27.512 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 17:08:27.626 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.083s)
+2026-06-13 17:08:27.644 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 17:08:27.650 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 17:08:27.775 [main] INFO  [] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-13 17:08:27.874 [main] INFO  [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-06-13 17:08:27.933 [main] INFO  [] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-13 17:08:28.302 [main] INFO  [] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-13 17:08:28.357 [main] WARN  [] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-13 17:08:29.098 [main] INFO  [] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-13 17:08:29.137 [main] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 17:08:29.497 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 17:08:29.497 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> СТАРТ МИГРАЦИИ FLYWAY <<<
+2026-06-13 17:08:29.498 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 17:08:29.542 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 17:08:29.552 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.005s)
+2026-06-13 17:08:29.586 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 17:08:29.587 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 17:08:29.589 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 17:08:29.589 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<
+2026-06-13 17:08:29.589 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 17:08:29.682 [main] WARN  [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-13 17:08:29.718 [main] INFO  [] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-13 17:08:30.328 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-13 17:08:30.346 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-13 17:08:30.354 [main] INFO  [] com.example.demo.DemoApplication - Started DemoApplication in 5.85 seconds (process running for 6.274)
+2026-06-13 17:08:30.357 [main] INFO  [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 17:08:30.357 [main] INFO  [] com.example.demo.config.LineRunner - Запуск ручной проверки логики...
+2026-06-13 17:08:30.482 [main] DEBUG [] com.example.demo.config.LineRunner - Проверка логики: УСПЕШНО!
+2026-06-13 17:08:30.483 [main] DEBUG [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 17:08:30.485 [main] DEBUG [] c.e.demo.config.DataInitializer - --- СУПЕР-АДМИН УЖЕ ЕСТЬ В БАЗЕ, ПРОПУСКАЕМ ---
+2026-06-13 17:08:41.855 [http-nio-8080-exec-1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-13 17:08:41.859 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-13 17:08:41.866 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-06-13 17:09:08.276 [http-nio-8080-exec-10] INFO  [] c.e.d.service.UserDetailsServiceImpl - Зарегистрирован новый пользователь с логином [Joy]
+2026-06-13 17:09:18.510 [http-nio-8080-exec-3] DEBUG [] c.e.d.service.UserDetailsServiceImpl - Процесс аутентификации: попытка загрузки пользователя [joy]
+2026-06-13 17:09:18.514 [http-nio-8080-exec-3] WARN  [] c.e.d.service.UserDetailsServiceImpl - Неудачная попытка входа: пользователь [joy] не найден в базе данных
+2026-06-13 17:09:29.112 [http-nio-8080-exec-2] DEBUG [] c.e.d.service.UserDetailsServiceImpl - Процесс аутентификации: попытка загрузки пользователя [joy]
+2026-06-13 17:09:29.118 [http-nio-8080-exec-2] WARN  [] c.e.d.service.UserDetailsServiceImpl - Неудачная попытка входа: пользователь [joy] не найден в базе данных
+2026-06-13 17:09:30.918 [http-nio-8080-exec-8] DEBUG [] c.e.d.service.UserDetailsServiceImpl - Процесс аутентификации: попытка загрузки пользователя [superadmin]
+2026-06-13 17:09:30.925 [http-nio-8080-exec-8] INFO  [] c.e.d.service.UserDetailsServiceImpl - Пользователь [superadmin] успешно найден. Роли: [ADMIN, USER]
+2026-06-13 17:09:31.065 [http-nio-8080-exec-6] DEBUG [superadmin] c.e.demo.service.TaskServiceImpl - Загрузка главного экрана (Dashboard). Сортировка всех задач для [superadmin]
+2026-06-13 17:09:36.762 [http-nio-8080-exec-9] WARN  [] c.e.demo.controller.AdminController - АДМИН ПАНЕЛЬ: Администратор [superadmin] инициировал полное удаление пользователя с ID #4
+2026-06-13 17:09:36.826 [http-nio-8080-exec-9] INFO  [] c.e.demo.controller.AdminController - АДМИН ПАНЕЛЬ: Пользователь ID #4 успешно удален из системы
+2026-06-13 17:10:25.401 [SpringApplicationShutdownHook] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 17:10:25.402 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-13 17:10:25.408 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-13 17:17:50.316 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-13 17:17:50.352 [main] INFO  [] com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.10 with PID 15904 (E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture\target\classes started by User in E:\JAVA\PetProject\15_Logging_Architecture\DevPath_Tracker_ver15.0_Logging_Architecture)
+2026-06-13 17:17:50.352 [main] DEBUG [] com.example.demo.DemoApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2026-06-13 17:17:50.353 [main] INFO  [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-13 17:17:51.180 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-13 17:17:51.222 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2026-06-13 17:17:51.855 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-13 17:17:51.868 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-13 17:17:51.871 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-13 17:17:51.871 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2026-06-13 17:17:51.942 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-13 17:17:51.943 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1547 ms
+2026-06-13 17:17:52.192 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-13 17:17:52.340 [main] INFO  [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b3f4bd8
+2026-06-13 17:17:52.341 [main] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-13 17:17:52.364 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 17:17:52.420 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.037s)
+2026-06-13 17:17:52.466 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 17:17:52.469 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 17:17:52.542 [main] INFO  [] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-13 17:17:52.590 [main] INFO  [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-06-13 17:17:52.633 [main] INFO  [] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-13 17:17:52.887 [main] INFO  [] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-13 17:17:52.935 [main] WARN  [] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-13 17:17:53.591 [main] INFO  [] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-13 17:17:53.617 [main] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 17:17:53.978 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 17:17:53.978 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> СТАРТ МИГРАЦИИ FLYWAY <<<
+2026-06-13 17:17:53.978 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ==============================================
+2026-06-13 17:17:54.019 [main] INFO  [] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/javarush_tracker (PostgreSQL 15.3)
+2026-06-13 17:17:54.030 [main] INFO  [] o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.005s)
+2026-06-13 17:17:54.065 [main] INFO  [] o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2026-06-13 17:17:54.065 [main] INFO  [] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-13 17:17:54.068 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 17:17:54.068 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - >>> FLYWAY: МИГРАЦИЯ УСПЕШНО ЗАВЕРШЕНА! ТАБЛИЦЫ СОЗДАНЫ <<<
+2026-06-13 17:17:54.068 [main] INFO  [] c.e.demo.DBFlyway.DatabaseMigrator - ===========================================================
+2026-06-13 17:17:54.153 [main] WARN  [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-13 17:17:54.184 [main] INFO  [] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-13 17:17:54.706 [main] INFO  [] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-13 17:17:54.723 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-13 17:17:54.730 [main] INFO  [] com.example.demo.DemoApplication - Started DemoApplication in 4.845 seconds (process running for 5.142)
+2026-06-13 17:17:54.860 [main] DEBUG [] c.e.demo.config.DataInitializer - --- СУПЕР-АДМИН УЖЕ ЕСТЬ В БАЗЕ, ПРОПУСКАЕМ ---
+2026-06-13 17:17:54.860 [main] INFO  [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 17:17:54.860 [main] INFO  [] com.example.demo.config.LineRunner - Запуск ручной проверки логики...
+2026-06-13 17:17:54.872 [main] DEBUG [] com.example.demo.config.LineRunner - Проверка логики: УСПЕШНО!
+2026-06-13 17:17:54.872 [main] DEBUG [] com.example.demo.config.LineRunner - ==================================================
+2026-06-13 17:18:06.422 [http-nio-8080-exec-1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-13 17:18:06.425 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-13 17:18:06.426 [http-nio-8080-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-13 17:18:15.921 [http-nio-8080-exec-3] INFO  [] c.e.d.service.UserDetailsServiceImpl - Зарегистрирован новый пользователь с логином [Joy]
+2026-06-13 17:18:19.682 [http-nio-8080-exec-6] DEBUG [] c.e.d.service.UserDetailsServiceImpl - Процесс аутентификации: попытка загрузки пользователя [superadmin]
+2026-06-13 17:18:19.690 [http-nio-8080-exec-6] INFO  [] c.e.d.service.UserDetailsServiceImpl - Пользователь [superadmin] успешно найден. Роли: [USER, ADMIN]
+2026-06-13 17:18:20.011 [http-nio-8080-exec-7] DEBUG [superadmin] c.e.demo.service.TaskServiceImpl - Загрузка главного экрана (Dashboard). Сортировка всех задач для [superadmin]
+2026-06-13 17:18:24.520 [http-nio-8080-exec-10] INFO  [superadmin] c.e.demo.controller.AdminController - АДМИН ПАНЕЛЬ: Пользователь [Joy] (ID #5) успешно удален из системы администратором [superadmin]
+2026-06-13 17:19:48.180 [SpringApplicationShutdownHook] INFO  [] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-13 17:19:48.182 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-13 17:19:48.186 [SpringApplicationShutdownHook] INFO  [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
