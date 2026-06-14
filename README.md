@@ -92,15 +92,16 @@
 ```text
 2026-06-13 15:12:40.890 [http-nio-8080-exec-5] ERROR [hacker_user] com.example.demo.service.TaskServiceImpl - НАРУШЕНИЕ БЕЗОПАСНОСТИ! Пользователь [hacker_user] пытается удалить чужую задачу #5
 ```
-#### 4. Логирование деструктивных действий администратора (Audit Trail):
+#### 4. Логирование деструктивных действий администратора:
 При удалении пользователя из админ-панели, система генерирует предупреждение уровня `WARN` 
 перед началом транзакции и фиксирует успешный результат уровнем `INFO`, наглядно демонстрируя связь логов и 
 SQL-каскадов Hibernate:
-
+```text
 2026-06-13 17:18:24.515 [http-nio-8080-exec-10] WARN  [superadmin] c.e.demo.controller.AdminController - АДМИН ПАНЕЛЬ: Администратор [superadmin] инициировал полное удаление пользователя [user] (ID #N)
 Hibernate: delete from user_role where user_id=?
 Hibernate: delete from users where id=?
 2026-06-13 17:18:24.520 [http-nio-8080-exec-10] INFO  [superadmin] c.e.demo.controller.AdminController - АДМИН ПАНЕЛЬ: Пользователь [user] (ID #N) успешно удален из системы администратором [superadmin]
+```
 ---
 
 ### Вывод:
