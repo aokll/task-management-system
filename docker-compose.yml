@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # Наша база данных
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tasks_db
+    ports:
+      - "5433:5432" # Прокидываем порты (внешний 5433, внутренний 5432)
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # <--- ВОТ ЭТА МАГИЯ
+
+  # Наше Spring Boot приложение
+  app:
+    build: .
+    container_name: java_app
+    ports:
+      - "8081:8080" # Твое приложение будет доступно на http://localhost:8081
+    depends_on:
+      - db
+    environment:
+      # Магия! Указываем Java, что база находится по имени сервиса "db"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/tasks_db
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
+volumes:
+  postgres_data:
